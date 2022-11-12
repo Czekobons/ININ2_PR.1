@@ -1,30 +1,34 @@
 public class Animal {
 
     final String species;
-    String name;
-    Double weight;
-    Boolean isAlive;
+    public String name;
+    public Double weight;
+    public Boolean isAlive;
 
-    Animal(String species) {
+    public Animal(String species, Double weight) {
         this.isAlive = true;
         this.species = species;
+        this.weight =  weight;
     }
     void feed() {
         if(this.weight>0&& this.isAlive) {
             this.weight += 0.4;
-            System.out.println("Dzieki za zarcie");
+            System.out.println("Thanks for food!");
         }
         else {
-            System.out.println("Gratulacje, zagłodziłeś swoje zwierze");
+            System.out.println("Congratualtion, your animal staved to death.");
         }
     }
     void takeForWalk() {
         if(this.isAlive&&this.weight>0) {
             this.weight -= 0.5;
-            System.out.println("Super spacer");
+            System.out.println("Nice walk.");
         }
         else {
-            System.out.println("Policja została powiadomiona o twoim zaniedbaniu");
+            System.out.println("The police have been notified of your negligence.");
         }
+    }
+    public String toString() {
+        return species+", "+isAlive+", "+weight;
     }
 }
